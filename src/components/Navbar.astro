@@ -1,0 +1,49 @@
+---
+import Logo from '@components/icons/Logo'
+const navigationLinks = [
+  {
+    label: 'Home',
+    route: '#home',
+  },
+  {
+    label: 'Projects',
+    route: '#projects',
+  },
+  {
+    label: 'About',
+    route: '#about',
+  },
+]
+---
+
+<header class='navbar'>
+  <nav class='navbar__container'>
+    <a href='/'>
+      <Logo className='logo' />
+    </a>
+    {navigationLinks.map(({ label, route }) => <a href={route}>{label}</a>)}
+  </nav>
+</header>
+<style lang='scss'>
+  .navbar {
+    color: var(--color-light-2);
+    padding: var(--size-spacing-2) 0;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(10px);
+
+    &__container {
+      width: var(--section-width);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+  .logo {
+    height: 4rem;
+    width: auto;
+  }
+</style>

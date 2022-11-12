@@ -1,0 +1,72 @@
+---
+import GitHub from '@components/icons/GitHub'
+const GithubProjectUrl = 'https://github.com/fentosv/' + import.meta.env.GITHUB_PROJECT_NAME
+---
+
+<footer class='footer'>
+  <div class='footer__container'>
+    <div class='footer__text'>
+      <p>
+        Developed by{' '}
+        <a
+          class='footer__text__link'
+          target='_blank'
+          href='https://github.com/fentosv'
+          rel='noopener noreferrer'
+        >
+          Fentos
+        </a>
+      </p>
+      <p>
+        Any issues?{' '}
+        <a
+          class='footer__text__link'
+          target='_blank'
+          href={`${GithubProjectUrl}/issues`}
+          rel='noopener noreferrer'
+        >
+          Report them here
+        </a>
+      </p>
+    </div>
+    <a
+      target='_blank'
+      href={GithubProjectUrl}
+      rel='noopener noreferrer'
+    >
+      <GitHub className='logo' />
+    </a>
+  </div>
+</footer>
+<style lang='scss'>
+  .footer {
+    color: var(--color-light-2);
+    display: flex;
+    user-select: none;
+    justify-content: center;
+    padding: var(--size-spacing-2) 0;
+
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: var(--section-width);
+    }
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 1.2rem;
+
+      &__link {
+        text-decoration: underline;
+      }
+    }
+  }
+  .logo {
+    height: 3rem;
+    width: auto;
+  }
+</style>

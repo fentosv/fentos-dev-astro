@@ -1,0 +1,124 @@
+---
+import Layout from '@layouts/Layout.astro'
+import Card from '../components/Card.astro'
+---
+
+<Layout title='Welcome to Astro.'>
+  <h1 id='home'>Welcome to <span>Home</span></h1>
+
+  <ul
+    role='list'
+    class='link-card-grid'
+  >
+    <p>Holaa</p>
+    <Card
+      href='https://docs.astro.build/'
+      title='Documentation'
+      body='Learn how Astro works and explore the official API docs.'
+    />
+    <Card
+      href='https://astro.build/integrations/'
+      title='Integrations'
+      body='Supercharge your project with new frameworks and libraries.'
+    />
+    <Card
+      href='https://astro.build/themes/'
+      title='Themes'
+      body='Explore a galaxy of community-built starter themes.'
+    />
+    <Card
+      href='https://astro.build/chat/'
+      title='Community'
+      body='Come say hi to our amazing Discord community. ❤️'
+    />
+    <Card
+      href='https://astro.build/themes/'
+      title='Themes'
+      body='Explore a galaxy of community-built starter themes.'
+    />
+    <Card
+      href='https://astro.build/chat/'
+      title='Community'
+      body='Come say hi to our amazing Discord community. ❤️'
+    />
+    <Card
+      href='https://astro.build/themes/'
+      title='Themes'
+      body='Explore a galaxy of community-built starter themes.'
+    />
+    <Card
+      href='https://astro.build/chat/'
+      title='Community'
+      body='Come say hi to our amazing Discord community. ❤️'
+    />
+  </ul>
+  <h1 id='about'>Welcome to <span>about</span></h1>
+  <ul
+    role='list'
+    class='link-card-grid'
+  >
+    <Card
+      href='https://docs.astro.build/'
+      title='Documentation'
+      body='Learn how Astro works and explore the official API docs.'
+    />
+    <Card
+      href='https://astro.build/integrations/'
+      title='Integrations'
+      body='Supercharge your project with new frameworks and libraries.'
+    />
+    <Card
+      href='https://astro.build/themes/'
+      title='Themes'
+      body='Explore a galaxy of community-built starter themes.'
+    />
+    <Card
+      href='https://astro.build/chat/'
+      title='Community'
+      body='Come say hi to our amazing Discord community. ❤️'
+    />
+    <Card
+      href='https://astro.build/themes/'
+      title='Themes'
+      body='Explore a galaxy of community-built starter themes.'
+    />
+    <Card
+      href='https://astro.build/chat/'
+      title='Community'
+      body='Come say hi to our amazing Discord community. ❤️'
+    />
+    <Card
+      href='https://astro.build/themes/'
+      title='Themes'
+      body='Explore a galaxy of community-built starter themes.'
+    />
+    <Card
+      href='https://astro.build/chat/'
+      title='Community'
+      body='Come say hi to our amazing Discord community. ❤️'
+    />
+  </ul>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1.5rem;
+    max-width: 60ch;
+  }
+  h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--color-light-1);
+    margin: 0;
+  }
+
+  .link-card-grid {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr)); */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0;
+  }
+</style>
