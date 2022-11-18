@@ -1,0 +1,20 @@
+.switch {
+  // background: transparent;
+  border: none;
+  font-size: 1.9rem;
+  user-select: none;
+  display: flex;
+
+  label {
+    padding: var(--size-spacing-1);
+  }
+  input {
+    display: none;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      border: 1px solid var(--color-main-1);
+    }
+  }
+}

@@ -1,5 +1,6 @@
 ---
 import Logo from '@components/icons/Logo'
+import ThemeSwitcher from './ThemeSwitcher'
 const navigationLinks = [
   {
     label: 'Home',
@@ -22,6 +23,10 @@ const navigationLinks = [
       <Logo className='logo' />
     </a>
     {navigationLinks.map(({ label, route }) => <a href={route}>{label}</a>)}
+    <ThemeSwitcher
+      client:visible
+      labels={{ useLight: 'themeToggle.useLight', useDark: 'themeToggle.useDark' }}
+    />
   </nav>
 </header>
 <style lang='scss'>
@@ -32,9 +37,9 @@ const navigationLinks = [
     gap: 0.5rem;
     justify-content: center;
     position: sticky;
+    transform: scaleZ(1);
     top: 0;
     backdrop-filter: blur(10px);
-
     &__container {
       width: var(--section-width);
       display: flex;

@@ -1,31 +1,49 @@
 @use '../styles/settings/sizes.scss';
 
+// Common spacings and sizes
 :root {
   --section-width: 90%;
+  --size-spacing-1: 0.4rem;
+  --size-spacing-2: 0.8rem;
+  --size-spacing-3: 1rem;
+  --size-spacing-4: 1.5rem;
+  --size-spacing-5: 2rem;
+
+  @media (min-width: sizes.$tablet) {
+    --section-width: 75%;
+    --size-spacing-1: 0.6rem;
+    --size-spacing-2: 1rem;
+    --size-spacing-3: 1.5rem;
+    --size-spacing-4: 2rem;
+    --size-spacing-5: 2.25rem;
+  }
+
+  @media (min-width: sizes.$desktop) {
+    --section-width: 80%;
+    --size-spacing-1: 0.6rem;
+    --size-spacing-2: 1rem;
+    --size-spacing-3: 1.5rem;
+    --size-spacing-4: 2rem;
+    --size-spacing-5: 2.25rem;
+  }
+}
+
+// Themes
+:root {
+  color-scheme: light;
   --color-dark-1: #222222;
   --color-dark-2: #444444;
   --color-dark-3: #666666;
   --color-light-1: #ffff;
   --color-light-2: rgb(222, 222, 222);
-  --color-main-1: #9370db;
-  --size-spacing-1: 0.8rem;
-  --size-spacing-2: 1rem;
-  --size-spacing-3: 1.5rem;
-  --size-spacing-4: 2rem;
+  --color-main-1: white;
+  --color-main-2: rgb(245, 233, 253) 0%;
+  --color-main-3: rgb(218, 173, 250) 70%;
 
-  @media (min-width: sizes.$tablet) {
-    --section-width: 75%;
-    --size-spacing-1: 1rem;
-    --size-spacing-2: 1.5rem;
-    --size-spacing-3: 2rem;
-    --size-spacing-4: 2.25rem;
-  }
-
-  @media (min-width: sizes.$desktop) {
-    --section-width: 80%;
-    --size-spacing-1: 1rem;
-    --size-spacing-2: 1.5rem;
-    --size-spacing-3: 2rem;
-    --size-spacing-4: 2.25rem;
+  &.theme-dark {
+    color-scheme: dark;
+    --color-main-1: #5d27c8;
+    --color-main-2: rgb(109, 62, 142) 0%;
+    --color-main-3: rgb(40, 10, 61) 70%;
   }
 }

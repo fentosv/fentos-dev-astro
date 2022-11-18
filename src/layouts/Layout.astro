@@ -2,9 +2,9 @@
 import '../styles/normalize.css'
 import '../styles/reset.local.css'
 import '../styles/var.scss'
+import '../styles/classes.scss'
 
 import Footer from '@components/Footer.astro'
-
 import Navbar from '@components/Navbar.astro'
 
 export interface Props {
@@ -33,9 +33,9 @@ const { title } = Astro.props
     />
     <title>{title}</title>
   </head>
-  <body>
-    <div class='gloss'></div>
-    <div class='interferences'></div>
+  <body class='gloss'>
+    <!-- <div class='gloss'></div>
+    <div class='interferences'></div> -->
     <Navbar />
     <main class='body'>
       <slot />
@@ -49,6 +49,7 @@ const { title } = Astro.props
       body {
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
           Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
         display: flex;
         flex-direction: column;
 
@@ -71,7 +72,6 @@ const { title } = Astro.props
               background-color: #aaaaaa;
             }
           }
-
           &:active {
             background-color: #808080;
           }
@@ -87,95 +87,28 @@ const { title } = Astro.props
         gap: var(--size-spacing-4);
         padding: var(--size-spacing-3) 0;
       }
-      .gloss,
-      .interferences {
-        position: fixed;
-        inset: 0;
-      }
+
       .gloss {
-        background: radial-gradient(rgb(66, 40, 85) 0%, rgb(40, 10, 61) 70%);
+        background: radial-gradient(var(--color-main-2), var(--color-main-3));
         background-repeat: no-repeat;
         background-attachment: fixed;
-        z-index: -1;
-      }
-      .interferences {
-        z-index: 1;
-        pointer-events: none;
-        animation: flicker 0.066666666s linear infinite;
-        background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%),
-          linear-gradient(
-            90deg,
-            rgba(66, 40, 85, 0.04),
-            rgba(40, 10, 61, 0.02),
-            rgba(0, 0, 255, 0.04)
-          );
-        background-size: 100% 10px, 15px 100%;
-      }
-      @keyframes flicker {
-        0% {
-          opacity: 0.3;
-        }
-        5% {
-          opacity: 0.4;
-        }
-        10% {
-          opacity: 0.2;
-        }
-        15% {
-          opacity: 0.9;
-        }
-        20% {
-          opacity: 0.2;
-        }
-        25% {
-          opacity: 0.8;
-        }
-        30% {
-          opacity: 0.6;
-        }
-        35% {
-          opacity: 0.7;
-        }
-        40% {
-          opacity: 0.2;
-        }
-        45% {
-          opacity: 0.8;
-        }
-        50% {
-          opacity: 0.9;
-        }
-        55% {
-          opacity: 0.1;
-        }
-        60% {
-          opacity: 0.2;
-        }
-        65% {
-          opacity: 0.7;
-        }
-        70% {
-          opacity: 0.5;
-        }
-        75% {
-          opacity: 0.37;
-        }
-        80% {
-          opacity: 0.71;
-        }
-        85% {
-          opacity: 0.7;
-        }
-        90% {
-          opacity: 0.7;
-        }
-        95% {
-          opacity: 0.36;
-        }
-        100% {
-          opacity: 0.24;
-        }
       }
     </style>
   </body>
 </html>
+<!-- <script is:inline> -->
+<script>
+  // We need to load theme asap, so we are handling it in the layout.
+  const STORAGE_THEME_KEY = 'theme'
+  // console.log(title)
+  const getLocalStorageTheme = localStorageKey => {
+    if (localStorage && localStorage.getItem(localStorageKey))
+      return localStorage.getItem(localStorageKey)
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'
+    return 'light'
+  }
+
+  const theme = getLocalStorageTheme(STORAGE_THEME_KEY)
+  const isDark = theme === 'dark'
+  document.documentElement.classList.toggle('theme-dark', isDark)
+</script>
