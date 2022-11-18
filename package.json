@@ -11,18 +11,18 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/image": "^0.11.2",
+    "@astrojs/image": "^0.11.4",
     "@astrojs/preact": "^1.2.0",
     "@astrojs/vercel": "^2.3.3",
-    "@types/react": "^18.0.21",
-    "@types/react-dom": "^18.0.6",
-    "astro": "^1.6.0",
-    "preact": "^10.6.5",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.8",
+    "astro": "^1.6.7",
+    "preact": "^10.11.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "sharp": "^0.31.2"
   },
   "devDependencies": {
-    "sass": "^1.56.0"
+    "sass": "^1.56.1"
   }
 }
