@@ -20,9 +20,18 @@ const navigationLinks = [
 <header class='navbar'>
   <nav class='navbar__container'>
     <a href='/'>
-      <Logo className='logo' />
+      <Logo class='logo' />
     </a>
-    {navigationLinks.map(({ label, route }) => <a href={route}>{label}</a>)}
+    {
+      navigationLinks.map(({ label, route }) => (
+        <a
+          class='navbar__anchor'
+          href={route}
+        >
+          {label}
+        </a>
+      ))
+    }
     <ThemeSwitcher
       client:visible
       labels={{ useLight: 'themeToggle.useLight', useDark: 'themeToggle.useDark' }}
@@ -46,6 +55,10 @@ const navigationLinks = [
       display: flex;
       align-items: center;
       justify-content: space-between;
+    }
+    &__anchor {
+      text-shadow: 0px 0px 3px var(--color-main-3), -1px -1px 4px var(--color-main-3),
+        1px 1px 5px var(--color-main-3);
     }
   }
   .logo {

@@ -48,14 +48,14 @@
   --color-light-2: rgb(222, 222, 222);
   --color-text-1: #1d1d1d;
   --color-main-1: white;
-  --color-main-2: rgb(245, 233, 253) 0%;
-  --color-main-3: rgb(222, 185, 249) 70%;
+  --color-main-2: rgb(245, 233, 253);
+  --color-main-3: rgb(222, 185, 249);
 
   &.theme-dark {
     color-scheme: dark;
     --color-text-1: #e4e4e4;
     --color-main-1: #5d27c8;
-    --color-main-2: rgb(78, 33, 110) 0%;
-    --color-main-3: rgb(29, 5, 47) 70%;
+    --color-main-2: rgb(78, 33, 110);
+    --color-main-3: rgb(29, 5, 47);
   }
 }
