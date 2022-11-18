@@ -37,7 +37,7 @@ const { title } = Astro.props
     <!-- <div class='gloss'></div>
     <div class='interferences'></div> -->
     <Navbar />
-    <main class='body'>
+    <main class='content'>
       <slot />
     </main>
     <Footer />
@@ -77,7 +77,7 @@ const { title } = Astro.props
           }
         }
       }
-      .body {
+      .content {
         color: var(--color-dark-1);
         display: flex;
         flex-grow: 1;
@@ -101,7 +101,7 @@ const { title } = Astro.props
   // We need to load theme asap, so we are handling it in the layout.
   const STORAGE_THEME_KEY = 'theme'
   // console.log(title)
-  const getLocalStorageTheme = localStorageKey => {
+  const getLocalStorageTheme = (localStorageKey: string) => {
     if (localStorage && localStorage.getItem(localStorageKey))
       return localStorage.getItem(localStorageKey)
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'

@@ -3,11 +3,15 @@
 // Common spacings and sizes
 :root {
   --section-width: 90%;
+  --size-content-max-width: 90rem;
   --size-spacing-1: 0.4rem;
   --size-spacing-2: 0.8rem;
   --size-spacing-3: 1rem;
   --size-spacing-4: 1.5rem;
   --size-spacing-5: 2rem;
+  --font-size-1: 1rem;
+  --font-size-2: 1.3rem;
+  --font-size-3: 2rem;
 
   @media (min-width: sizes.$tablet) {
     --section-width: 75%;
@@ -16,15 +20,21 @@
     --size-spacing-3: 1.5rem;
     --size-spacing-4: 2rem;
     --size-spacing-5: 2.25rem;
+    --font-size-1: 1rem;
+    --font-size-2: 1.4rem;
+    --font-size-3: 2.25rem;
   }
 
   @media (min-width: sizes.$desktop) {
-    --section-width: 80%;
+    --section-width: 60%;
     --size-spacing-1: 0.6rem;
     --size-spacing-2: 1rem;
     --size-spacing-3: 1.5rem;
     --size-spacing-4: 2rem;
     --size-spacing-5: 2.25rem;
+    --font-size-1: 1rem;
+    --font-size-2: 1.4rem;
+    --font-size-3: 2.25rem;
   }
 }
 
@@ -36,14 +46,16 @@
   --color-dark-3: #666666;
   --color-light-1: #ffff;
   --color-light-2: rgb(222, 222, 222);
+  --color-text-1: #1d1d1d;
   --color-main-1: white;
   --color-main-2: rgb(245, 233, 253) 0%;
-  --color-main-3: rgb(218, 173, 250) 70%;
+  --color-main-3: rgb(222, 185, 249) 70%;
 
   &.theme-dark {
     color-scheme: dark;
+    --color-text-1: #e4e4e4;
     --color-main-1: #5d27c8;
-    --color-main-2: rgb(109, 62, 142) 0%;
-    --color-main-3: rgb(40, 10, 61) 70%;
+    --color-main-2: rgb(78, 33, 110) 0%;
+    --color-main-3: rgb(29, 5, 47) 70%;
   }
 }
