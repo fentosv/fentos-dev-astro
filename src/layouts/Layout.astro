@@ -32,10 +32,24 @@ const { title } = Astro.props
       content={Astro.generator}
     />
     <title>{title}</title>
+    <script is:inline>
+      // Inline: not bundled, so will execute the first
+      // We need to load theme asap, so we are handling it in the layout.
+      const STORAGE_THEME_KEY = 'theme'
+      // console.log(title)
+      const getLocalStorageTheme = localStorageKey => {
+        if (localStorage && localStorage.getItem(localStorageKey))
+          return localStorage.getItem(localStorageKey)
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'
+        return 'light'
+      }
+
+      const theme = getLocalStorageTheme(STORAGE_THEME_KEY)
+      const isDark = theme === 'dark'
+      document.documentElement.classList.toggle('theme-dark', isDark)
+    </script>
   </head>
   <body class='gloss'>
-    <!-- <div class='gloss'></div>
-    <div class='interferences'></div> -->
     <Navbar />
     <main class='content'>
       <slot />
@@ -96,19 +110,3 @@ const { title } = Astro.props
     </style>
   </body>
 </html>
-<script is:inline>
-  // <script>
-  // We need to load theme asap, so we are handling it in the layout.
-  const STORAGE_THEME_KEY = 'theme'
-  // console.log(title)
-  const getLocalStorageTheme = localStorageKey => {
-    if (localStorage && localStorage.getItem(localStorageKey))
-      return localStorage.getItem(localStorageKey)
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'
-    return 'light'
-  }
-
-  const theme = getLocalStorageTheme(STORAGE_THEME_KEY)
-  const isDark = theme === 'dark'
-  document.documentElement.classList.toggle('theme-dark', isDark)
-</script>
