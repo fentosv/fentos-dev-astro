@@ -5,6 +5,8 @@
   user-select: none;
   display: flex;
   border: 1px solid transparent;
+  opacity: var(--theme-switcher-logo-opacity);
+  transition: opacity 0.2s;
 
   label {
     padding: var(--size-spacing-1);
