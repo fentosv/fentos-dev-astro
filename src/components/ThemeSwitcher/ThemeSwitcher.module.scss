@@ -1,15 +1,23 @@
 .switch {
-  // background: transparent;
-  border: none;
+  display: flex;
   font-size: 1.9rem;
   user-select: none;
-  display: flex;
   border: 1px solid transparent;
   transition: opacity 0.2s;
-  animation: appear 1s;
+  position: relative;
 
   label {
     padding: var(--size-spacing-1);
+    color: transparent; // Transparent placeholder icon
+
+    &::after {
+      content: var(--theme-icon);
+      color: white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
   input {
     display: none;
@@ -18,15 +26,6 @@
   @media (hover: hover) {
     &:hover {
       border: 1px solid var(--color-main-1);
-    }
-  }
-
-  @keyframes appear {
-    from {
-      opacity: var(--theme-switcher-initial-opacity);
-    }
-    to {
-      opacity: var(--theme-switcher-final-opacity);
     }
   }
 }

@@ -41,8 +41,7 @@ const ThemeSwitcher: FunctionalComponent<Props> = ({ labels }) => {
         }}
         type='checkbox'
       />
-      {/* TODO Esperar a que cargue todo para mostrar iconos */}
-      <label htmlFor='input'>{theme === Themes.dark ? '🌑' : '🌞'}</label>
+      <label htmlFor='input'>🥦</label>
     </span>
   )
 }

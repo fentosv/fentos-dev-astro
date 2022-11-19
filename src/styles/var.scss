@@ -48,21 +48,19 @@
   --color-light-2: rgb(222, 222, 222);
   --color-text-1: #1d1d1d;
   --color-main-1: white;
-  --color-main-2: rgb(245, 233, 253);
-  --color-main-3: rgb(222, 185, 249);
+  --color-main-2: #f5e9fd;
+  --color-main-3: #deb9f9;
 
-  //As light theme is default, we want to prevent the icon flicker change
-  --theme-switcher-initial-opacity: 1;
-  --theme-switcher-final-opacity: 1;
+  // Theme icon set up with CSS, preventing flickering
+  --theme-icon: '🌞';
 
   &.theme-dark {
     color-scheme: dark;
     --color-text-1: #e4e4e4;
-    --color-main-1: #5d27c8;
-    --color-main-2: rgb(78, 33, 110);
-    --color-main-3: rgb(29, 5, 47);
-    // Dark theme will appear, preventing the flicking
-    --theme-switcher-initial-opacity: 0;
-    --theme-switcher-final-opacity: 1;
+    --color-main-1: #5d28c8;
+    --color-main-2: #4e216e;
+    --color-main-3: #1d052f;
+
+    --theme-icon: '🌑';
   }
 }
