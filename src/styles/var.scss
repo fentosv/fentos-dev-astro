@@ -51,11 +51,18 @@
   --color-main-2: rgb(245, 233, 253);
   --color-main-3: rgb(222, 185, 249);
 
+  //As light theme is default, we want to prevent the icon flicker change
+  --theme-switcher-initial-opacity: 1;
+  --theme-switcher-final-opacity: 1;
+
   &.theme-dark {
     color-scheme: dark;
     --color-text-1: #e4e4e4;
     --color-main-1: #5d27c8;
     --color-main-2: rgb(78, 33, 110);
     --color-main-3: rgb(29, 5, 47);
+    // Dark theme will appear, preventing the flicking
+    --theme-switcher-initial-opacity: 0;
+    --theme-switcher-final-opacity: 1;
   }
 }

@@ -15,7 +15,6 @@ enum Themes {
 const STORAGE_THEME_KEY = 'theme'
 
 const ThemeSwitcher: FunctionalComponent<Props> = ({ labels }) => {
-  const [opacity, setOpacity] = useState(0)
   const [theme, setTheme] = useState(() => {
     if (import.meta.env.SSR) {
       return undefined
@@ -25,16 +24,12 @@ const ThemeSwitcher: FunctionalComponent<Props> = ({ labels }) => {
   const isDark = theme === Themes.dark
 
   useEffect(() => {
-    setOpacity(1) // Prevent the icon change flicker
     const root = document.documentElement
     root.classList.toggle('theme-dark', theme === Themes.dark)
   }, [theme])
 
   return (
-    <span
-      style={{ '--theme-switcher-logo-opacity': opacity } as Record<string, number>}
-      className={styles.switch}
-    >
+    <span className={styles.switch}>
       <input
         checked={isDark}
         id='input'
